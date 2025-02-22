@@ -1,0 +1,49 @@
+ className="border-2 border-gray-600 text-gray-600 font-bold  p-1 text-xl  rounded-md hover:text-red-300 hover:border-red-300 cursor-pointer"
+
+         <div className="absolute bottom-0 " >
+            <h3>Items :</h3>
+            <h3>Total Amount</h3>   
+            <hr />
+            <button  className="bg-green-500 font-bold px-3 text-white py-2 rounded-lg w-[90vw] lg:w-[18vw] mb-5" >checkout
+
+            </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        import { configureStore } from "@reduxjs/toolkit";
+import CartSlice from "./redux/CartSlice"
+const Store = configureStore({
+
+    reducer: {
+        cart: CartSlice,
+    },
+
+});
+export default Store;
+
+
+
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import { Provider } from "react-redux";
+import Store from"./redux/Store.js";
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+  
+        <App />
+    
+  
+  </StrictMode>,
+)
